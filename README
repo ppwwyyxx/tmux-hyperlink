@@ -1,3 +1,18 @@
+# About this fork
+
+This is a tmux fork that has support for OSC-8 hyperlink control sequence, i.e.
+clickable hyperlinks. See [OSC8-Adoption](https://github.com/Alhadis/OSC8-Adoption) for more details.
+The patch comes from [here](https://github.com/tmux/tmux/issues/911#issuecomment-427944765).
+
+To use it, build tmux from this fork following its official instructions, then set
+```
+set -as terminal-overrides ',*:Hls=\E]8;id=%p1%s;%p2%s\E\\:Hlr=\E]8;;\E\\'
+```
+in `.tmux.conf`.
+
+The fork currently tracks version 3.3a from upstream.
+
+
 Welcome to tmux!
 
 tmux is a terminal multiplexer: it enables a number of terminals to be created,

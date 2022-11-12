@@ -1,7 +1,7 @@
 # configure.ac
 
-AC_INIT([tmux], 3.3a)
-AC_PREREQ([2.60])
+AC_INIT([tmux],[3.3a])
+AC_PREREQ([2.71])
 
 AC_CONFIG_AUX_DIR(etc)
 AC_CONFIG_LIBOBJ_DIR(compat)
@@ -44,7 +44,10 @@ fi
 # Set up the compiler in two different ways and say yes we may want to install.
 AC_PROG_CC
 AM_PROG_CC_C_O
-AC_PROG_CC_C99
+m4_warn([obsolete],
+[AC_PROG_CC_C99 is obsolete; use AC_PROG_CC
+])dnl
+AC_REQUIRE(AC_PROG_CC)
 AC_PROG_CPP
 AC_PROG_EGREP
 AC_PROG_INSTALL
